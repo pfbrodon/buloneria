@@ -1,0 +1,21 @@
+.formulario {
+    background-color: rgb(228, 235, 241);
+    margin: 10px auto;
+    width: fit-content;
+    padding: 20px;
+}
+
+.etiqueta {
+    padding: 5px;
+}
+
+.botonera {
+    padding: 5px;
+    text-align: center;
+}
+
+.btn {
+    outline: auto;
+    outline-width: 12px;
+    outline-color: darkgray;
+}
