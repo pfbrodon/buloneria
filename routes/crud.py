@@ -21,16 +21,16 @@ def editar(id):
     item = Producto.query.get(id)
     if request.method == "POST":
         item.cantidad = request.form.get("cantidad")
-        item.categoria_id = request.form.get("categoria_id")
+        item.id_categoria = request.form.get("id_categoria")
         item.codigo = request.form.get("codigo")
         item.descripcion = request.form.get("descripcion")
         item.precioUnit = request.form.get("precioUnit")
         item.precioVPublico = request.form.get("precioVPublico")
         db.session.commit()  # confirma el alta
-        return redirect(url_for("crud.index"))
+        return redirect(url_for("/index"))
     # Obtén los datos del elemento con el ID proporcionado
-    return render_template("editar.html", item=item)
-
+    #return render_template("editar.html", item=item)
+    return render_template("crud.editar", item=item)
 
 ###################################################################
 
@@ -41,13 +41,13 @@ def nuevo():
         request.method == "POST"
     ):  # print(request.json)  # request.json contiene el json que envio el cliente
         cantidad = request.form.get("cantidad")
-        categoria_id = request.form.get("categoria_id")
+        id_categoria = request.form.get("id_categoria")
         codigo = request.form.get("codigo")
         descripcion = request.form.get("descripcion")
         precioUnit = request.form.get("precioUnit")
         precioVPublico = request.form.get("precioVPublico")
         productoNuevo = Producto(
-            cantidad, categoria_id, codigo, descripcion, precioUnit, precioVPublico
+            cantidad, id_categoria, codigo, descripcion, precioUnit, precioVPublico
         )
         db.session.add(productoNuevo)
         db.session.commit()  # confirma el alta
@@ -58,12 +58,12 @@ def nuevo():
 ###################################################################
 
 
-@crud.route("/eliminar/<int:id>", methods=["POST", "GET"])
+@crud.route("/eliminar/<int:id>", methods=["POST"])
 def eliminar(id):
     item = db.session.query(Producto).get(id)
-    if request.method == "POST":
-        db.session.delete(item)
-        db.session.commit()
-        flash("Elemento eliminado correctamente", "success")
-        return redirect(url_for("crud.index"))
+    #if request.method == "POST":
+    db.session.delete(item)
+    db.session.commit()
+    flash("Elemento eliminado correctamente", "success")
     return redirect(url_for("crud.index"))
+   #return redirect(url_for("crud.index"))
