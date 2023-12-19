@@ -1,8 +1,19 @@
 from flask import Blueprint, render_template, request, url_for, redirect, flash
-from models.buloneriaModels import Producto
-from utils.db import db
+#from models.buloneriaModels import Producto
+#from utils.db import db
 crud=Blueprint('crud',__name__)
+ 
+@crud.route('/')
+def home():
+    return 'Hello Word2'
 
+@crud.route('/new')
+def addproduct():
+    return 'Guardando'
+
+
+
+'''
 @crud.route("/")
 def index():
     # Obtén los datos de la tabla
@@ -64,4 +75,4 @@ def eliminar(id):
         db.session.commit()
         flash("Elemento eliminado correctamente", "success")
         return redirect(url_for("index"))
-    return redirect(url_for("index"))
+    return redirect(url_for("index"))'''
