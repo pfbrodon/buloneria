@@ -4,17 +4,13 @@ from utils.db import db
 crud=Blueprint('crud',__name__)
 
 
-
 @crud.route("/")
 def index():
     # Obtén los datos de la tabla
     data = Producto.query.all()
     return render_template("index.html", data=data)
 
-
-
 ###################################################################
-
 
 @crud.route("/editar/<int:id>", methods=["POST", "GET"])
 def editar(id):
@@ -33,7 +29,6 @@ def editar(id):
     return render_template("crud.editar", item=item)
 
 ###################################################################
-
 
 @crud.route("/nuevo", methods=["POST", "GET"])  # crea ruta o endpoint
 def nuevo():
@@ -54,9 +49,7 @@ def nuevo():
         return redirect(url_for("crud.index"))
     return render_template("nuevo.html")
 
-
 ###################################################################
-
 
 @crud.route("/eliminar/<int:id>", methods=["POST"])
 def eliminar(id):
