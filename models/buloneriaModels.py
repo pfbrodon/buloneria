@@ -20,3 +20,11 @@ class Producto(db.Model):
         self.descripcion = descripcion
         self.precioUnit = precioUnit
         self.precioVPublico = precioVPublico
+
+class Categoria(db.Model):
+    # Define tu modelo SQLAlchemy aquí
+    id = db.Column(db.Integer, primary_key=True)  # define los campos de la tabla
+    catNombre = db.Column(db.String(50))
+
+    def __init__(self, catNombre):  # crea el  constructor de la clase
+        self.catNombre = catNombre  # no hace falta el id porque lo crea sola mysql por ser auto_incremento
