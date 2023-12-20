@@ -51,12 +51,10 @@ def nuevo():
 
 ###################################################################
 
-@crud.route("/eliminar/<int:id>", methods=["POST"])
+@crud.route("/eliminar/<id>")
 def eliminar(id):
-    item = db.session.query(Producto).get(id)
-    #if request.method == "POST":
+    item = Producto.query.get(id)
     db.session.delete(item)
     db.session.commit()
-    flash("Elemento eliminado correctamente", "success")
-    return redirect(url_for("crud.index"))
+    return redirect("/")
    #return redirect(url_for("crud.index"))
