@@ -23,10 +23,10 @@ def editar(id):
         item.precioUnit = request.form.get("precioUnit")
         item.precioVPublico = request.form.get("precioVPublico")
         db.session.commit()  # confirma el alta
-        return redirect(url_for("/index"))
+        return redirect(url_for("crud.index"))
     # Obtén los datos del elemento con el ID proporcionado
     #return render_template("editar.html", item=item)
-    return render_template("crud.editar", item=item)
+    return render_template("editar.html", item=item)
 
 ###################################################################
 

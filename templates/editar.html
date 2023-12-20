@@ -11,7 +11,7 @@
 
 <body>
     <div class="formulario">
-        <form id="app" method="POST" action="{{ url_for('editar' , id=item.id)}}">
+        <form id="app" method="POST" action="/editar/{{item.id}}">
             <div class="etiqueta">
                 <label>CATEGORIA: </label>&nbsp;<input type="text" value="{{ item.categoria_id }}" id="categoria_id" name="categoria_id">
             </div>
