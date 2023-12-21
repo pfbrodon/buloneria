@@ -1,5 +1,5 @@
 {% extends 'layout.html' %} {% block body %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
 <div class="container"><br>
     <div>
         <a href="{{ url_for('crud.nuevo') }}" class="btn btn-primary">NUEVO</a>
@@ -34,11 +34,6 @@
                                 <a href="{{ url_for('crud.editar', id=item.id) }}" class="btn btn-primary btn-sm">EDITAR</a>
                                 <a href="{{ url_for('crud.eliminar', id=item.id) }}" class="btn btn-danger btn-sm">ELIMINAR</a>
                             </div>
-
-                            <!--<form action="{{ url_for('crud.eliminar', id=item.id) }}" method="post" class="center-buttons">
-                                    <a href="{{ url_for('crud.editar', id=item.id) }}" class="btn btn-primary btn-sm">EDITAR</a>
-                                    <button type="submit" class="btn btn-danger btn-sm">ELIMINAR</button>
-                                </form>-->
                         </td>
                     </tr>
                     {% endfor %}

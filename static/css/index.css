@@ -15,9 +15,10 @@
 }
 
 .table {
-    font-size: 12px;
-    width: 85%;
+    font-size: 14px;
+    width: 100%;
     border-collapse: collapse;
+    line-height: 27px;
 }
 
 .table td:first-child,
@@ -69,21 +70,21 @@
 }
 
 .btn-sm {
-    width: 60px;
-    height: 20px;
+    width: 70px;
+    height: 30px;
     padding: 2px;
-    font-size: 11px;
+    font-size: 12px;
     text-align: center;
     line-height: 12px;
 }
 
 .btn {
-    width: 60px;
-    height: 20px;
+    width: 70px;
+    height: 30px;
     padding: 2px;
-    font-size: 11px;
+    font-size: 12px;
     text-align: center;
-    line-height: 14px;
+    line-height: 22px;
 }
 
 
