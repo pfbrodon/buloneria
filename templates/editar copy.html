@@ -2,9 +2,9 @@
 <div class="container">
     <div class="formulario">
         <form id="app" method="POST" action="/editar/{{item.id}}">
-            <!--<div class="etiqueta">
+            <div class="etiqueta">
                 <label>CATEGORIA: </label>&nbsp;<input type="text" value="{{ item.categoria_id }}" id="categoria_id" name="categoria_id">
-            </div>-->
+            </div>
             <div class="etiqueta">
                 <label>CODIGO: </label>&nbsp;<input type="numeric" value="{{ item.codigo }}" id="codigo" name="codigo">
             </div>
@@ -21,12 +21,8 @@
                 <label>PRECIO VP: </label>&nbsp;<input type="numeric" value="{{ item.precioVPublico }}" id="precioVPublico" name="precioVPublico">
             </div>
             <div class="etiqueta">
-                <label>CAT: </label>&nbsp;
-                <select name="catNombre" id="id_categoria">
-                    <option value='{{item.id_categoria}}' selected>{{item.id_categoria}}</option>
-                    {% for catnombre in catnombre %}
-                    <option value='{{catnombre.catNombre}}'>{{catnombre.catNombre}}</option>
-                    {% endfor %}
+                <label>CAT: </label>&nbsp;<select name="categoria_id" id="categoria_id">
+                    <option value="{{ item.categoria_id }}">{{ item.categoria_id.categoria }}</option>
                 </select>
             </div>
             <br>

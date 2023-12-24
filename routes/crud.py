@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, url_for, redirect, flash
-from models.buloneriaModels import Producto
+from models.buloneriaModels import Producto, Categoria
 from utils.db import db
 crud=Blueprint('crud',__name__)
 
@@ -15,9 +15,10 @@ def index():
 @crud.route("/editar/<int:id>", methods=["POST", "GET"])
 def editar(id):
     item = Producto.query.get(id)
+    catnombre= Categoria.query.all()
     if request.method == "POST":
         item.cantidad = request.form.get("cantidad")
-        item.id_categoria = request.form.get("id_categoria")
+        item.id_categoria = request.form.get("catNombre")
         item.codigo = request.form.get("codigo")
         item.descripcion = request.form.get("descripcion")
         item.precioUnit = request.form.get("precioUnit")
@@ -26,17 +27,18 @@ def editar(id):
         return redirect(url_for("crud.index"))
     # Obtén los datos del elemento con el ID proporcionado
     #return render_template("editar.html", item=item)
-    return render_template("editar.html", item=item)
+    return render_template("editar.html", item=item, catnombre=catnombre)
 
 ###################################################################
 
 @crud.route("/nuevo", methods=["POST", "GET"])  # crea ruta o endpoint
 def nuevo():
+    catnombre= Categoria.query.all()
     if (
         request.method == "POST"
     ):  # print(request.json)  # request.json contiene el json que envio el cliente
         cantidad = request.form.get("cantidad")
-        id_categoria = request.form.get("id_categoria")
+        id_categoria = request.form.get("catNombre")
         codigo = request.form.get("codigo")
         descripcion = request.form.get("descripcion")
         precioUnit = request.form.get("precioUnit")
@@ -47,7 +49,7 @@ def nuevo():
         db.session.add(productoNuevo)
         db.session.commit()  # confirma el alta
         return redirect(url_for("crud.index"))
-    return render_template("nuevo.html")
+    return render_template("nuevo.html", catnombre=catnombre)
 
 ###################################################################
 
