@@ -1,4 +1,5 @@
 {% extends 'layout.html' %} {% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/nuevo.css') }}">
 <div class="container">
     <div class="formulario">
         <form id="app" method="POST" action="{{ url_for('crud.nuevo') }}">
@@ -19,7 +20,8 @@
                 <label>DESCRIPCION: </label>&nbsp;<input type="text" id="descripcion" name="descripcion">
             </div>
             <div class="etiqueta">
-                <label>CANTIDAD: </label>&nbsp;<input type="numeric" id="cantidad" name="cantidad">
+                <label>CANTIDAD: </label>&nbsp;
+                <input type="numeric" id="cantidad" name="cantidad">
             </div>
             <div class="etiqueta">
                 <label>PRECIO COSTO: </label>&nbsp;<input type="numeric" id="precioUnit" name="precioUnit">
@@ -28,7 +30,7 @@
                 <label>PRECIO VP: </label>&nbsp;<input type="numeric" id="precioVPublico" name="precioVPublico">
             </div>
             <br>
-            <div class="botones">
+            <div class="botonera">
                 <button type="submit" class="btn btn-success">
                         GUARDAR
                     </button>

@@ -1,4 +1,5 @@
 {% extends 'layout.html' %} {% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/editar.css') }}">
 <div class="container">
     <div class="formulario">
         <form id="app" method="POST" action="/editar/{{item.id}}">
