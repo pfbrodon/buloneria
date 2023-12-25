@@ -60,3 +60,11 @@ def eliminar(id):
     db.session.commit()
     return redirect("/")
    #return redirect(url_for("crud.index"))
+
+##################################################################
+
+@crud.route('/lista')
+def lista():
+    data = Producto.query.all()
+    return render_template("lista.html", data=data)
+
