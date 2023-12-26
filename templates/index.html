@@ -1,9 +1,6 @@
 {% extends 'layout.html' %} {% block body %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 <div class="container"><br>
-    <div>
-        <a href="{{ url_for('crud.nuevo') }}" class="btn btn-primary">NUEVO</a>
-    </div>
     <br>
     <form action="{{ url_for('crud.buscar') }}" method="POST">
         <!--<button class="btn btn-success" type="submit">BUSCAR</button> <input type="text" name="buscar" id="buscar">-->
