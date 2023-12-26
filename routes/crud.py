@@ -34,9 +34,7 @@ def editar(id):
 @crud.route("/nuevo", methods=["POST", "GET"])  # crea ruta o endpoint
 def nuevo():
     catnombre= Categoria.query.all()
-    if (
-        request.method == "POST"
-    ):  # print(request.json)  # request.json contiene el json que envio el cliente
+    if (request.method == "POST"):  
         cantidad = request.form.get("cantidad")
         id_categoria = request.form.get("catNombre")
         codigo = request.form.get("codigo")
@@ -68,3 +66,14 @@ def lista():
     data = Producto.query.all()
     return render_template("lista.html", data=data)
 
+##################################################################
+
+@crud.route('/buscar', methods=['POST'])
+def buscar():
+    criterioBusqueda= request.form.get("buscar")
+    print(f'EL CRITERIO DE BUSQUEDA ES: {criterioBusqueda}')
+    if request.method == 'POST':
+        #criterioBusq= "tornillo"
+        #resultadoBusq = Producto.query.filter_by(descripcion=criterioBusq).all()
+        resultadoBusqueda = Producto.query.filter(Producto.descripcion.contains(criterioBusqueda)).all()
+        return render_template("index.html", data=resultadoBusqueda)

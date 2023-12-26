@@ -87,5 +87,13 @@
     line-height: 22px;
 }
 
+#button-addon1 {
+    height: auto;
+}
+
+.custom-width {
+    width: 500px;
+}
+
 
 /* Ancho del botón */
