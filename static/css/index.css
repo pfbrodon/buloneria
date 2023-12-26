@@ -15,7 +15,7 @@
 }
 
 .table {
-    font-size: 14px;
+    font-size: 12px;
     width: 90%;
     border-collapse: collapse;
     line-height: 27px;
@@ -69,15 +69,6 @@
     /* Porcentaje deseado para la cuarta columna */
 }
 
-.btn-sm {
-    width: 70px;
-    height: 30px;
-    padding: 2px;
-    font-size: 12px;
-    text-align: center;
-    line-height: 12px;
-}
-
 .btn {
     width: 70px;
     height: 30px;
@@ -89,11 +80,19 @@
 
 #button-addon1 {
     height: auto;
-    line-height: 22px;
+    padding: 2px;
+    font-size: 12px;
+    text-align: center;
 }
 
 .custom-width {
     width: 500px;
+}
+
+.btn-success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 

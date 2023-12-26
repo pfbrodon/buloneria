@@ -5,8 +5,8 @@
     <form action="{{ url_for('crud.buscar') }}" method="POST">
         <!--<button class="btn btn-success" type="submit">BUSCAR</button> <input type="text" name="buscar" id="buscar">-->
         <div class="input-group mb-3 custom-width">
-            <a href="{{ url_for('crud.nuevo') }}" class="btn btn-primary" id="button-addon1">NUEVO</a>
-            <button class="btn btn-outline-secondary" type="submit" id="button-addon1">BUSCAR</button>
+            <a href="{{ url_for('crud.nuevo') }}" class="btn btn-success" id="button-addon1">NUEVO</a>
+            <button class="btn btn-secondary" type="submit" id="button-addon1">BUSCAR</button>
             <input type="text" class="form-control" placeholder="Ingrese el Item a Buscar" aria-label="Example text with button addon" aria-describedby="button-addon1" name="buscar" id="buscar">
         </div>
     </form>

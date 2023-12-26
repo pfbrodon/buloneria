@@ -6,24 +6,30 @@
             <!--<div class="etiqueta">
                 <label>CATEGORIA: </label>&nbsp;<input type="text" value="{{ item.categoria_id }}" id="categoria_id" name="categoria_id">
             </div>-->
-            <div class="etiqueta">
-                <label>CODIGO: </label>&nbsp;<input type="numeric" value="{{ item.codigo }}" id="codigo" name="codigo">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">CODIGO</span>
+                <input type="numeric" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="codigo" id="codigo" value="{{ item.codigo }}">
             </div>
-            <div class="etiqueta">
-                <label>DESCRIPCION: </label>&nbsp;<input type="text" value="{{ item.descripcion }}" id="descripcion" name="descripcion">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">DESCRIPCION</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="descripcion" id="descripcion" value="{{ item.descripcion }}">
             </div>
-            <div class="etiqueta">
-                <label>CANTIDAD: </label>&nbsp;<input type="numeric" value="{{ item.cantidad }}" id="cantidad" name="cantidad">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">CANTIDAD</span>
+                <input type="numeric" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cantidad" id="cantidad" value="{{ item.cantidad }}">
             </div>
-            <div class="etiqueta">
-                <label>PRECIO COSTO: </label>&nbsp;<input type="numeric" value="{{ item.precioUnit }}" id="precioUnit" name="precioUnit">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">PRECIO COSTO</span>
+                <input type="numeric" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="precioUnit" id="precioUnit" value="{{ item.precioUnit }}">
             </div>
-            <div class="etiqueta">
-                <label>PRECIO VP: </label>&nbsp;<input type="numeric" value="{{ item.precioVPublico }}" id="precioVPublico" name="precioVPublico">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">PRECIO VP</span>
+                <input type="numeric" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="precioVPublico" id="precioVPublico" value="{{ item.precioVPublico }}">
             </div>
-            <div class="etiqueta">
-                <label>CAT: </label>&nbsp;
-                <select name="catNombre" id="id_categoria">
+
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">CATEGORIA </label>
+                <select name="catNombre" id="id_categoria" class="form-select" id="inputGroupSelect01">
                     <option value='{{item.id_categoria}}' selected>{{item.id_categoria}}</option>
                     {% for catnombre in catnombre %}
                     <option value='{{catnombre.catNombre}}'>{{catnombre.catNombre}}</option>
