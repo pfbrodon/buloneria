@@ -14,15 +14,17 @@
             </form>
         </div>
         <div class="col-md-6">
-            <div class="input-group mb-3 custom-width2">
-                <button class="btn btn-secondary" type="button" id="button-addon2">FILTRO</button>
-                <select name="filtro" class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
-                    <option selected>Seleccionar la Categoria</option>
-                    <option value="1">BULONERIA</option>
-                    <option value="2">FERRETERIA</option>
-                    <option value="3">FIJACIONES</option>
-                </select>
-            </div>
+            <form action="{{ url_for('crud.filtro') }}" method="POST">
+                <div class="input-group mb-3 custom-width2">
+                    <button class="btn btn-secondary" type="submit" id="button-addon2">FILTRO</button>
+                    <select name="catNombre" id="id_categoria" class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+                        <option selected>Seleccionar la Categoria</option>
+                        {% for catnombre in catnombre %}
+                        <option value='{{catnombre.catNombre}}'>{{catnombre.catNombre}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </form>
         </div>
     </div>
     <div class="table-responsive">

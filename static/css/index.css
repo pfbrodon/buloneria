@@ -16,7 +16,7 @@
 
 .table {
     font-size: 13px;
-    width: 90%;
+    width: 96%;
     border-collapse: collapse;
     line-height: 27px;
 }
@@ -104,6 +104,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#demo {
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.93);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.93);
 }
 
 
