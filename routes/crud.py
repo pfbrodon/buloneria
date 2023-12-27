@@ -20,7 +20,7 @@ def editar(id):
         item.cantidad = request.form.get("cantidad")
         item.id_categoria = request.form.get("catNombre")
         item.codigo = request.form.get("codigo")
-        item.descripcion = request.form.get("descripcion")
+        item.descripcion = request.form.get("descripcion").upper()
         item.precioUnit = request.form.get("precioUnit")
         item.precioVPublico = request.form.get("precioVPublico")
         db.session.commit()  # confirma el alta
@@ -38,7 +38,7 @@ def nuevo():
         cantidad = request.form.get("cantidad")
         id_categoria = request.form.get("catNombre")
         codigo = request.form.get("codigo")
-        descripcion = request.form.get("descripcion")
+        descripcion = request.form.get("descripcion").upper()
         precioUnit = request.form.get("precioUnit")
         precioVPublico = request.form.get("precioVPublico")
         productoNuevo = Producto(
