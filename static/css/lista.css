@@ -16,7 +16,7 @@
 
 .table {
     font-size: 14px;
-    width: 80%;
+    width: 90%;
     border-collapse: collapse;
     line-height: 27px;
 }
@@ -53,24 +53,16 @@
 
 .table td:nth-child(6),
 .table th:nth-child(6) {
-    width: 8%;
+    width: 10%;
     /* Porcentaje deseado para la cuarta columna */
 }
 
-.btn-sm {
-    width: 70px;
-    height: 30px;
-    padding: 2px;
-    font-size: 12px;
-    text-align: center;
-    line-height: 12px;
-}
-
 .btn {
-    width: 70px;
-    height: 30px;
+    width: 50px;
+    height: 40px;
     padding: 2px;
-    font-size: 12px;
+    font-size: 15px;
+    font-weight: bold;
     text-align: center;
     line-height: 22px;
 }
