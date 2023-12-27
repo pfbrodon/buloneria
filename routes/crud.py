@@ -66,7 +66,7 @@ def lista():
     data = Producto.query.all()
     return render_template("lista.html", data=data)
 
-##################################################################
+#########################################################################
 
 @crud.route('/buscar', methods=['POST'])
 def buscar():
@@ -76,4 +76,16 @@ def buscar():
         #criterioBusq= "tornillo"
         #resultadoBusq = Producto.query.filter_by(descripcion=criterioBusq).all()
         resultadoBusqueda = Producto.query.filter(Producto.descripcion.contains(criterioBusqueda)).all()
+        return render_template("index.html", data=resultadoBusqueda)
+    
+#########################################################################
+
+@crud.route('/filtro', methods=['POST'])
+def filtro():
+    criterioFiltro= request.form.get("filtro")
+    print(f'EL CRITERIO DE BUSQUEDA ES: {criterioFiltro}')
+    if request.method == 'POST':
+        #criterioBusq= "tornillo"
+        #resultadoBusq = Producto.query.filter_by(descripcion=criterioBusq).all()
+        resultadoBusqueda = Producto.query.filter(Producto.id_categoria.contains(criterioFiltro)).all()
         return render_template("index.html", data=resultadoBusqueda)
