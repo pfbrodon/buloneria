@@ -15,7 +15,7 @@
 }
 
 .table {
-    font-size: 12px;
+    font-size: 13px;
     width: 90%;
     border-collapse: collapse;
     line-height: 27px;
@@ -85,7 +85,18 @@
     text-align: center;
 }
 
+#button-addon2 {
+    height: auto;
+    padding: 2px;
+    font-size: 12px;
+    text-align: center;
+}
+
 .custom-width {
+    width: 500px;
+}
+
+.custom-width2 {
     width: 500px;
 }
 
