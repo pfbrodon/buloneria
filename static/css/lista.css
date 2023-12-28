@@ -1,3 +1,9 @@
+.container {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .columMoneda {
     text-align: right;
 }
@@ -10,20 +16,23 @@
     text-align: center;
 }
 
-.centrarbotones {
+.input-group {
     text-align: center;
+    margin: 0 auto;
+    justify-content: center;
 }
 
 .table {
     font-size: 14px;
     width: 90%;
     border-collapse: collapse;
-    line-height: 27px;
+    vertical-align: middle;
 }
 
 .table td:nth-child(1),
 .table th:nth-child(1) {
     width: 5%;
+    text-align: center;
     /* Porcentaje deseado para la tercera columna */
 }
 
@@ -54,6 +63,7 @@
 .table td:nth-child(6),
 .table th:nth-child(6) {
     width: 10%;
+    align-items: center;
     /* Porcentaje deseado para la cuarta columna */
 }
 
