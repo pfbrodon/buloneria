@@ -65,7 +65,7 @@
 
 .table td:nth-child(8),
 .table th:nth-child(8) {
-    width: 14%;
+    width: 11%;
     /* Porcentaje deseado para la cuarta columna */
 }
 

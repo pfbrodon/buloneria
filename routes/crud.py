@@ -58,7 +58,7 @@ def eliminar(id):
     db.session.delete(item)
     db.session.commit()
     return redirect("/")
-   #return redirect(url_for("crud.index"))
+    #return redirect(url_for("crud.index"))
 
 ##################################################################
 
