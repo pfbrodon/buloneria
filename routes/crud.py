@@ -74,8 +74,6 @@ def buscar():
     criterioBusqueda= request.form.get("buscar")
     print(f'EL CRITERIO DE BUSQUEDA ES: {criterioBusqueda}')
     if request.method == 'POST':
-        #criterioBusq= "tornillo"
-        #resultadoBusq = Producto.query.filter_by(descripcion=criterioBusq).all()
         resultadoBusqueda = Producto.query.filter(Producto.descripcion.contains(criterioBusqueda)).all()
         return render_template("index.html", data=resultadoBusqueda)
     
@@ -86,8 +84,6 @@ def filtro():
     criterioFiltro= request.form.get("catNombre")
     print(f'EL CRITERIO DE BUSQUEDA ES: {criterioFiltro}')
     if request.method == 'POST':
-        #criterioBusq= "tornillo"
-        #resultadoBusq = Producto.query.filter_by(descripcion=criterioBusq).all()
         resultadoBusqueda = Producto.query.filter(Producto.id_categoria.contains(criterioFiltro)).all()
         catnombre= Categoria.query.all()
         return render_template("index.html", data=resultadoBusqueda, catnombre=catnombre)
