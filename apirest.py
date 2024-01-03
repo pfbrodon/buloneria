@@ -8,7 +8,7 @@ CORS(app) #modulo cors es para que me permita acceder desde el frontend al backe
 
 
 # configuro la base de datos, con el nombre el usuario y la clave
-app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://root:12345678@localhost/buloneria'
+app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://root:12345678@localhost/proyecto'
 # URI de la BBDD                          driver de la BD  user:clave@URLBBDD/nombreBBDD
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False #none
 db= SQLAlchemy(app)   #crea el objeto db de la clase SQLAlquemy
@@ -27,11 +27,11 @@ def index():
 class Producto(db.Model):   # la clase Producto hereda de db.Model    
     id=db.Column(db.Integer, primary_key=True)   #define los campos de la tabla
     cantidad=db.Column(db.Integer)
-    id_categoria=db.Column(db.String(50))
+    id_categoria=db.Column(db.String(20))
     codigo=db.Column(db.Integer)
     descripcion=db.Column(db.String(50))
-    precioUnit=db.Column(db.Integer)
-    precioVPublico=db.Column(db.Integer)
+    precioUnit=db.Column(db.Float(precision=2))
+    precioVPublico=db.Column(db.Float(precision=2))
     
     def __init__(self,cantidad,id_categoria,codigo,descripcion,precioUnit,precioVPublico):   #crea el  constructor de la clase
         self.cantidad=cantidad  # no hace falta el id porque lo crea sola mysql por ser auto_incremento
