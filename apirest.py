@@ -83,6 +83,14 @@ def delete_producto(id):
     db.session.commit()                     # confirma el delete
     return producto_schema.jsonify(producto) # me devuelve un json con el registro eliminado
 
+@app.route('/productos/resta/<id>', methods=['PUT'])
+def resta_cantProducto(id):
+    producto=Producto.query.get(id)
+    producto.cantidad=request.json['cantidad']
+    print(producto.cantidad)
+    db.session.commit()    # confirma el cambio
+    return producto_schema.jsonify(producto)    # y retorna un json con el producto
+
 
 @app.route('/productos', methods=['POST']) # crea ruta o endpoint
 def create_producto():
